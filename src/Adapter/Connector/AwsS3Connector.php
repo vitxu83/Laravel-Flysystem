@@ -92,6 +92,10 @@ final class AwsS3Connector implements ConnectorInterface
             $auth['endpoint'] = $config['endpoint'];
         }
 
+        if (array_key_exists('use_path_style_endpoint', $config)) {
+            $auth['use_path_style_endpoint'] = $config['use_path_style_endpoint'];
+        }
+
         return $auth;
     }
 
