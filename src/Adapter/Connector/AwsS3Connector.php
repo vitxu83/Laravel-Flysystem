@@ -97,7 +97,7 @@ final class AwsS3Connector implements ConnectorInterface
         }
 
         if (array_key_exists('http_handler', $config)) {
-            $auth['http_handler'] = $config['http_handler'];
+            $auth['http_handler'] = call_user_func($config['http_handler']);
         }
 
         return $auth;
