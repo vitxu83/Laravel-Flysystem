@@ -2,6 +2,29 @@ CHANGE LOG
 ==========
 
 
+## V8.0 (30/05/2022)
+
+* Dropped PHP < 7.4
+* Dropped Laravel < 8
+
+
+## V7.1.2 (21/11/2021)
+
+* Provisional PHP 8.1 support
+* Updated package metadata
+
+
+## V7.1.1 (27/11/2020)
+
+* Manager phpdoc fixes
+
+
+## V7.1 (14/08/2020)
+
+* Added Laravel 8 support
+* Added provisional PHP 8.0 support
+
+
 ## V7.0.1 (14/04/2020)
 
 * Updated funding information

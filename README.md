@@ -6,37 +6,37 @@ Laravel Flysystem was created by, and is maintained by [Graham Campbell](https:/
 ![Banner](https://user-images.githubusercontent.com/2829600/71477347-60993680-27e1-11ea-9ae5-e8168f95c3a6.png)
 
 <p align="center">
+<a href="https://github.com/GrahamCampbell/Laravel-Flysystem/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-Flysystem/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/15766264"><img src="https://github.styleci.io/repos/15766264/shield" alt="StyleCI Status"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-Flysystem/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-Flysystem/Tests?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Flysystem/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Flysystem?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Flysystem"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Flysystem?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
+<a href="https://packagist.org/packages/graham-campbell/flysystem"><img src="https://img.shields.io/packagist/dt/graham-campbell/flysystem?style=flat-square" alt="Packagist Downloads"></img></a>
 <a href="https://github.com/GrahamCampbell/Laravel-Flysystem/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Flysystem?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
 ## Installation
 
-Laravel Flysystem requires [PHP](https://php.net) 7.2-7.4. This particular version supports Laravel 6-7.
+This version requires [PHP](https://www.php.net/) 7.4-8.1 and supports [Laravel](https://laravel.com/) 8.
 
-| Flysystem | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 |
-|-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 3.7       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 4.1       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 5.3       | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
-| 6.3       | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 7.0       | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: |
+| Flysystem | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 |
+|-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 3.7       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 4.1       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 5.3       | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
+| 6.3       | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| 7.1       | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 8.0       | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: |
 
-To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require graham-campbell/flysystem
+$ composer require "graham-campbell/flysystem:^8.0"
 ```
 
 There are also some additional dependencies you will need to install for some of the features:
 
 * The AwsS3 adapter requires `league/flysystem-aws-s3-v3` (`^1.0`).
-* The Azure adapter requires `league/flysystem-azure-azure-blob-storage` (`^0.1.6`).
+* The Azure adapter requires `league/flysystem-azure-blob-storage` (`^0.1.6`).
 * The Dropbox adapter requires `spatie/flysystem-dropbox` (`^1.0`).
 * The GoogleCloudStorage adapter requires `superbalist/flysystem-google-storage` (`^7.2`).
 * The GridFS adapter requires `league/flysystem-gridfs` (`^1.0`) and `alcaeus/mongo-php-adapter` (`^1.1`).
@@ -176,7 +176,7 @@ There are other classes in this package that are not documented here. This is be
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-Flysystem/security/policy).
+If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-Flysystem/security/policy).
 
 
 ## License

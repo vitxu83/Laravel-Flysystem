@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Flysystem.
  *
- * (c) Graham Campbell <graham@alt-three.com>
+ * (c) Graham Campbell <hello@gjcampbell.co.uk>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,35 +20,36 @@ use Illuminate\Support\Arr;
 /**
  * This is the flysystem manager class.
  *
- * @method \League\Flysystem\FilesystemInterface connection(string|null $name)
- * @method \League\Flysystem\FilesystemInterface reconnect(string|null $name)
- * @method array<string,\League\Flysystem\FilesystemInterface> getConnections(string $name)
- * @method bool has(string $path)
- * @method false|string read(string $path)
- * @method false|resource readStream(string $path)
- * @method array listContents(string $directory = '', bool $recursive = false)
- * @method false|array getMetadata(string $path)
- * @method false|int getSize(string $path)
- * @method false|string getMimetype(string $path)
- * @method false|int getTimestamp(string $path)
- * @method false|string getVisibility(string $path)
- * @method bool write(string $path, string $contents, array $config = [])
- * @method bool writeStream(string $path, resource $resource, array $config = [])
- * @method bool update(string $path, string $contents, array $config = [])
- * @method bool updateStream(string $path, resource $resource, array $config = [])
- * @method bool rename(string $path, string $newpath)
- * @method bool copy(string $path, string $newpath)
- * @method bool delete(string $path)
- * @method bool deleteDir(string $dirname)
- * @method bool createDir(string $dirname, array $config = [])
- * @method bool setVisibility(string $path, string $visibility)
- * @method bool put(string $path, string $contents, array $config = [])
- * @method bool putStream(string $path, resource $resource, array $config = [])
- * @method string readAndDelete(string $path)
- * @method \League\Flysystem\Handler get(string $path, \League\Flysystem\Handler $handler = null)
- * @method \League\Flysystem\FilesystemInterface addPlugin(\League\Flysystem\PluginInterface $plugin)
+ * @method \League\Flysystem\FilesystemInterface               connection(string|null $name = null)
+ * @method \League\Flysystem\FilesystemInterface               reconnect(string|null $name = null)
+ * @method void                                                disconnect(string|null $name = null)
+ * @method array<string,\League\Flysystem\FilesystemInterface> getConnections()
+ * @method bool                                                has(string $path)
+ * @method false|string                                        read(string $path)
+ * @method false|resource                                      readStream(string $path)
+ * @method array                                               listContents(string $directory = '', bool $recursive = false)
+ * @method false|array                                         getMetadata(string $path)
+ * @method false|int                                           getSize(string $path)
+ * @method false|string                                        getMimetype(string $path)
+ * @method false|int                                           getTimestamp(string $path)
+ * @method false|string                                        getVisibility(string $path)
+ * @method bool                                                write(string $path, string $contents, array $config = [])
+ * @method bool                                                writeStream(string $path, resource $resource, array $config = [])
+ * @method bool                                                update(string $path, string $contents, array $config = [])
+ * @method bool                                                updateStream(string $path, resource $resource, array $config = [])
+ * @method bool                                                rename(string $path, string $newpath)
+ * @method bool                                                copy(string $path, string $newpath)
+ * @method bool                                                delete(string $path)
+ * @method bool                                                deleteDir(string $dirname)
+ * @method bool                                                createDir(string $dirname, array $config = [])
+ * @method bool                                                setVisibility(string $path, string $visibility)
+ * @method bool                                                put(string $path, string $contents, array $config = [])
+ * @method bool                                                putStream(string $path, resource $resource, array $config = [])
+ * @method string                                              readAndDelete(string $path)
+ * @method \League\Flysystem\Handler                           get(string $path, \League\Flysystem\Handler $handler = null)
+ * @method \League\Flysystem\FilesystemInterface               addPlugin(\League\Flysystem\PluginInterface $plugin)
  *
- * @author Graham Campbell <graham@alt-three.com>
+ * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
 class FlysystemManager extends AbstractManager
 {
